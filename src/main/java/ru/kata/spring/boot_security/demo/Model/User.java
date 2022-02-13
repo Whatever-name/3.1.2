@@ -34,7 +34,7 @@ public class User implements UserDetails {
     private String password;
 
     @Column
-    @ManyToMany(cascade = {CascadeType.REFRESH,CascadeType.REMOVE})
+    @ManyToMany(cascade = {CascadeType.REFRESH})
     @JoinTable(joinColumns= {@JoinColumn(name="user_id")},
             inverseJoinColumns= {@JoinColumn(name="role_id")})
     private Set<Role> roles;
